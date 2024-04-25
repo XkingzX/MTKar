@@ -1,0 +1,514 @@
+@import url(https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200..900&display=swap
+);
+@import url('https://fonts.cdnfonts.com/css/hero-new');
+* {
+    margin :0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Hero New', sans-serif;
+}
+h1 {
+    font-size:50px;
+    line-height: 64px;
+    color:#222;
+}
+h2{
+    font-size:46px;
+    line-height: 54px;
+    color:#222;
+}
+h4{
+    font-size:20px;
+    color:#222;
+}
+h6{
+    font-weight: 700;
+    font-size:12px;
+}
+p{
+    font-size:16px;
+    color: #465b52;
+    margin: 15px 0 20px 0;
+}
+.section-p1
+{
+    padding:40px 80px;
+}
+.section-p2
+{
+    padding-top:40px;
+}
+.section-m1
+{
+    margin:40px 0;
+}
+body{
+    width: 100%;
+}
+#header{
+    height: 85px;
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    padding:20px 80px;
+    background: #222;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.06);  
+    z-index:999;
+    position: fixed;
+    width: 100%;
+    top:0;
+    left:0;
+}
+.logo
+{
+    width: 80px ;
+}
+#navbar
+{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+#navbar li{
+    list-style:none;
+    padding: 0 40px;
+    position: relative;
+}
+#navbar li a 
+{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color:whitesmoke;
+}
+#navbar li a:hover
+{
+    text-decoration: underline;
+    background-color: gray;
+    border-radius: 5pt;
+}
+.dropdown
+{
+    display:none
+}
+#header ul li:hover .dropdown
+{
+    display:block;
+    position: absolute;
+    left:0;
+    top:100%;
+    background-color: #222;
+}
+#dn_name
+{
+    color: white;
+    font-weight: bold;
+}
+#ten-nguoi-dung{
+    padding: 10px;
+    font-weight: bold;
+    color: rgb(87, 213, 255);
+}
+#header ul li:hover .dropdown ul
+{
+    display:block;
+    margin:10px
+}
+#header ul li:hover .dropdown ul li
+{
+    display:block;
+    margin:10px
+}
+.feature 
+{
+    width: 100%;
+    height: 1200px;
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+#hero
+{
+    height: 1200px;
+    background-image: url(../img/background.jpg);
+    width: 100%;
+    background-size:cover;
+    padding:0 80px;
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.text-wrapper
+{
+    display:flex;
+    justify-content: flex-start;
+    background-color: #606063;
+    overflow: hidden;
+    font-size:38px;
+    text-transform: uppercase;
+    color:white;
+    white-space:nowrap;
+    padding:0 25px;
+    letter-spacing: 1px;
+    
+}
+h1.thongbao{
+    font-size:38px;
+    text-transform: uppercase;
+    color:white;
+    white-space:nowrap;
+    padding:0 25px;
+    letter-spacing: 1px;
+    animation: move-rtl 10s linear infinite;
+}
+@keyframes move-rtl
+{
+    0%{
+        transform: translateX(0);
+    }
+    100%
+    {
+        transform:translateX(-100%)
+    }
+}
+.title
+{
+    text-align: center;
+    line-height: 200px;
+    color:#222;
+}
+button{
+    appearance: auto;
+    border: 0pt solid white;
+    border-radius: 10pt;
+    background-color: white;
+    text-decoration: none;
+    width: 100%;
+    height: 40px;
+}
+button:hover
+{
+    background-color: rgb(196, 196, 196);
+    cursor:pointer;
+}
+#cart{
+    appearance: auto;
+    border: 0pt solid white;
+    border-radius: 10pt;
+    background-color: rgb(196, 196, 196);
+    text-decoration: none;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+}
+/* #cart{
+    width: 40px;
+    height: 40px;
+    line-height: f40px;
+    border-radius: 50px;
+    background-color: #e8f6ea;
+    font-weight: 500;   
+    color:#465b52
+} */
+#cart:hover
+{
+    background-color: #353535;
+    cursor:pointer;
+}
+#product1
+{
+    text-align: center;
+}
+#product1 .pro
+{
+    position: relative;
+    width: 32%;
+    min-width: 250px;
+    padding:12px 12px;
+    border: 1pt solid lightslategray;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 20px 20px 30px rgba(0,0,0,0.02);
+    margin:15px 0;
+    transition:0.2s ease;
+}
+#product1 .pro a
+{
+    text-decoration: none;
+    color:#222;
+}
+#product1 .pro:hover{
+    box-shadow: 5px 5px ;
+}
+#product1 .pro img{
+    width: 100%;
+    border-radius: 20px;
+}
+#product1 .pro .des
+{
+    text-align: center;
+    padding:10px 0;
+}
+#product1 .pro .des span{
+    color:#606063;
+    font-size:12px
+}
+#product1 .pro .des h5{
+    font-size:30px;
+}
+#product1 .procontainer
+{
+    display:flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    flex-wrap: wrap;
+}
+#banner
+{
+    margin-top: 60pt;
+    background-size:contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    overflow: hidden;
+}
+.highlights-list {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+.result-features {
+    padding: 0;
+}
+.result-highlights-cta {
+    padding: 0 ;
+    position: relative;
+}
+.tds-text--h4, h4 {
+    font-size: 20px;
+    display:inline;
+    margin:0 -2px;
+}
+.highlights-list li:not(:first-child) {
+    border-inline-start: 1px solid #ccc;
+}
+.highlights-list li {
+    flex-grow: 1;
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    width: 25%;
+}
+#product1 .pro ul {
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+.gray
+{
+    width: 100%;
+    height: 1600px;
+    background-color: #d9d9d9;
+}
+.choicediv
+{
+    width: 90%;
+    margin:0 auto;
+    height: 500px;
+    border-radius: 10pt;
+}
+.reasondiv
+{
+    border-radius: 15pt;
+    width: 20%;
+    height: 300px;
+    margin: 80px 0 0 60px;
+    float:left;
+    background-color:white;
+    padding:20pt
+}
+#reason1 .choicediv .reasondiv h3{
+    color:#606063;
+    font-size:25px;
+    color: #222;
+}
+#reason1 .choicediv .reasondiv p{
+    color:#606063;
+    font-size:15px;
+    margin-top: 10pt;
+}
+#reason1
+{
+    text-align: center;
+}
+#access1
+{
+    text-align: center;
+}
+#access1 .accessproduct
+{
+    width: 100%;
+    height: 800px;
+    border-radius: 10pt;
+    display: flex;
+}
+#access1 .accessproduct .accesspro
+{
+    border-radius: 15pt;
+    border:1pt solid lightslategray;
+    width: 600pt;
+    height: 600px;
+    margin: 80px 0 0 100px;
+    float:left;
+    padding:20pt;
+    transition:0.2s ease;
+    cursor: pointer;
+}
+#access1 .accessproduct .accesspro:hover{
+    box-shadow: 5px 5px ;
+}
+#access1 .accessproduct .accesspro h3
+{
+    margin-top: 80pt;
+    color:rgb(255, 255, 255);
+    font-size: 30pt;
+}
+#access1 .accessproduct .accesspro p
+{
+    width: 70%;
+    color:rgb(223, 223, 223);
+    font-size: 15pt;
+    margin: 0 auto;
+}
+footer
+{
+    background-color: white;
+    flex-wrap: wrap;
+    width: 100%;
+    display: flex;    
+    justify-content: space-between;
+    border-top: 3pt solid black;
+}
+footer .col
+{
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+footer a{
+    font-size:13px;
+    text-decoration: none;
+    color:#222;
+    margin-bottom: 10px;
+}
+footer p 
+{
+    font-size:13px;
+    margin: 0 0 8px 0;
+}
+footer h3{
+    font-size: 14px;
+    padding-bottom: 20px;
+}
+.DchiEmail
+{
+    padding-inline-start: 20px;
+    width: 226pt;
+    height: 40pt;
+    float:left;
+}
+.Dkysubmit
+{
+    background-color: black;
+    color:white;
+    width: 120pt;
+    height: 40pt;
+    float:left;
+}
+.checkbox
+{
+    margin-top: 10pt;
+    height: 10pt;
+    width: 15pt;
+}
+.tableleft
+{
+    float:left;
+    width: 100%;
+}
+.tableleft1
+{
+    text-align: center;
+    width: 100%;
+    padding:20pt;
+    border-radius: 20pt;
+}
+.tableleft th{
+    margin-left: 100pt;
+    background-color: orange;
+    border: 1pt solid black;
+    padding:20pt
+    
+}
+.tableleft td
+{
+    border: 1pt solid black;
+}
+.tableright
+
+{
+    margin-right: 120pt;
+    float:right;
+}
+.thanhtoanbt
+{
+    margin:10pt 0 0 30%;
+    width: 150pt;
+    height: 50pt;
+    border-radius: 5pt;
+    background-color:white;
+}
+.thanhtoanbt:hover
+{
+    background-color: rgb(196, 196, 196);
+    cursor: pointer;
+}
+.xoarongbt
+{
+    margin-left: 50pt;
+    width: 200pt;
+    height: 50pt;
+    cursor:pointer;
+    border-radius:10pt
+}
+.xoarongbt:hover
+{
+    background-color: rgb(196, 196, 196);
+    cursor: pointer;
+}
+.purchasetable
+{
+    height: 400pt;
+    text-align: center;
+    width: 80%;
+    margin-bottom: 100pt;
+    padding:20pt
+}
+.purchasetable th
+{
+    background-color: orange;
+    border:1pt solid black;
+    padding:20pt
+}
+.purchasetable td
+{
+    border: 1pt solid black;
+    padding:20pt
+}
+.purchaseimg
+{
+    height: 80px;
+}

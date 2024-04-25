@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MTKar - Cửa hàng xe</title>
+    <link rel = "stylesheet" type = "text/css" href = "css/product.css">
+    
+    <script src="https://kit.fontawesome.com/77f2b086b8.js" crossorigin="anonymous"></script>
+    <script lang = "Javascript" src ="javascript/home.js"></script>
+</head>
+<body onload = "loaddatahome()">
+    <script>
+        window.onload = function(){
+            var thongtintaikhoan = JSON.parse(localStorage.getItem('thongtintaikhoan')) || {};
+            var dangxuat = document.getElementById('dangxuat');
+            var chuadangnhap = document.getElementById('chuadangnhap');
+            var thongtincanhan = document.getElementById('thongtincanhan');
+
+            if (thongtintaikhoan.taikhoan) {
+            dangxuat.textContent = "Đăng xuất";
+            thongtincanhan.textContent = "Thông tin cá nhân";
+            } else {
+            chuadangnhap.textContent = "Đăng nhập";
+            }
+        };
+        function donmua(){
+                var laydulieu = localStorage.getItem('thongtintaikhoan');
+                if (laydulieu !== null) {
+
+                    var thongtintaikhoan = JSON.parse(laydulieu);
+                    window.location.href="purchase.html";
+                }
+                else
+                    alert("Để xem đơn hàng bạn cần tạo tài khoản");
+                }
+                function thongtincanhan(){
+                window.location.href = "order.html";
+                }
+    </script>
+    <section id = "header" >
+        <a href = "home.html"><img src = "img/mtkar-high-resolution-logo-transparent.png" class = "logo" alt = ""></a>
+        <div>
+            <ul id = "navbar">
+                <li><a href = "home.html">Trang chủ</a></li>
+                <li><a href = "shop.html">Cửa hàng</a></li>
+                <li><a href = "about.html">Giới thiệu</a></li>  
+                <li><a href ="#"><i class="fa-solid fa-user"></i></a>
+                    <div class = "dropdown">
+                    <ul >
+                        <li><a href = "dangnhap.html" id="chuadangnhap"></a></li>
+                        <li><a href = "#" onclick="thongtincanhan()" id="thongtincanhan"></a></li>
+                        <li><a href = "cart.html">Giỏ hàng: <span id = "slsp"></span></a></li>
+                        <li><a href = "#" onclick="donmua()">Đơn mua</a></li>
+                        <li><a href = "dangnhap.html" id="dangxuat"></a></li>
+                    </ul>
+                </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section id = "hero">
+        <h3>Revuelto</h3>
+        <h2>From now on</h2>
+        <section class="result-highlights-cta">
+            <div class="result-highlights">
+                <ul class="highlights-list">
+                    <li>
+                        <div style = "font-weight: bold;">
+                            POWER (combined ICE+EE)
+                            </div>
+                            <div>
+                                <span>1015 CV</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <span style = "font-weight: bold;">350</span>
+                                 <span style = "font-weight: bold;">km/h</span>
+                                </div>
+                                <div class="tds-text--caption">
+                                    <span>Top Speed</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <span style = "font-weight: bold;">2.5</span>
+                                     <span style = "font-weight: bold;">s</span>
+                                    </div>
+                                    <div class="tds-text--caption">
+                                        <span>0-100 km/h</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+    </div>
+    </section>
+    <section id = "prodetails" class = "section-p1">
+        <div class = "single-pro-img">
+            <img src = "img/Revuelto_Exterior_Beauty_01.jpeg" width="100%" id = "MainImg" alt = "">
+            <div class = "small-img-group">
+                <div class = "small-img-col">
+                    <img src = "img/Revuelto_Exterior_Beauty_01.jpeg" width="100%" class = "small-img" alt = "">
+                </div>
+                <div class = "small-img-col">
+                    <img src = "img/Revuelto_Exterior_Beauty_01 black.jpeg" width="100%" class = "small-img" alt = "">
+                </div>
+                <div class = "small-img-col">
+                    <img src = "img/Revuelto_Exterior_Beauty_01 red.jpeg" width="100%" class = "small-img" alt = "">
+                </div>
+                <div class = "small-img-col">
+                    <img src = "img/Revuelto_Exterior_Beauty_01 white.jpeg" width="100%" class = "small-img" alt = "">
+                </div>
+            </div>
+        </div>
+        <div class = "single-pro-details">
+            <h6>Home / Lamboghini</h6>
+            <h4>Revuelto</h4>
+            <h4>$608,000</h4>
+            <input type = "hidden" name ="price" value ="608000">
+            <button><i class="fa-solid fa-cart-shopping"></i></button>
+            <h4>Tổng quan sản phẩm</h4>
+            <p>Ngay trước kỷ niệm 60 năm của thương hiệu, Lamborghini đã giới thiệu Revuelto, chiếc xe thể thao hybrid HPEV (High Performance Electrified Vehicle) đầu tiên. Với Revuelto, Lamborghini đã đặt ra một tiêu chuẩn mới về hiệu suất, công nghệ trên xe và niềm vui khi lái. Sự kích tình cực đại mà Revuelto mang lại được đạt đến nhờ một động cơ tổng công suất 1015 CV, kết hợp giữa sức mạnh của động cơ nội tiết 12 xi-lanh hoàn toàn mới với ba động cơ điện có mật độ cao và hộp số e-gearbox đổi chiều độc đáo. Sự kết hợp của công nghệ hybrid giúp đưa hiệu suất và cảm xúc khi lái lên một tầm cao chưa từng có.
+
+                <br>Tình trạng cung cấp các mẫu xe Lamborghini có thể thay đổi tùy thuộc vào quốc gia. Để biết thêm thông tin, vui lòng liên hệ đại lý địa phương của bạn.</p>
+        </div>
+    </section>
+    <h2 style = "text-align: center;">Thông số kĩ thuật</h2>
+    <table class ="kithuat" cellspacing = "0px">
+        <tr>
+            <th style = "text-align: left;">THUYÊN</th>
+            <th style = "text-align: right;">6498,5 cm³ (396,6 với vải lanh)</th>
+        </tr>
+        <tr>
+            <th style = "text-align: left;">CÔNG SUẤT TỐI ĐA (KẾT HỢP ICE + EE)
+            </th>
+            <th style = "text-align: right;">1015 CV</th>
+        </tr>
+        <tr>
+            <th style = "text-align: left;">TỐC ĐỘ TỐI ĐA
+            </th>
+            <th style = "text-align: right;">>350 km/h</th>
+        </tr>
+        <tr>
+            <th style = "text-align: left;">TIÊU THỤ KẾT HỢP*</th>
+            <th style = "text-align: right;">11,86 l/100km (WLTP)
+
+            </th>
+        </tr>
+        <tr>
+            <th style = "text-align: left;">LƯỢNG KHÍ THẢI CO2 KẾT HỢP*
+            </th>
+            <th style = "text-align: right;">276 g/km (WLTP)
+            </th>
+        </tr>
+        <tr>
+            <th style = "text-align: left;">TỔNG CÔNG SUẤT TIÊU THỤ*
+
+            </th>
+            <th style = "text-align: right;">10,1 kWh/100 km (WLTP)
+            </th>
+        </tr>
+    </table>
+    <section id = "product1" class = "section-p1">
+        <h2 style = "text-align: center;">Sản phẩm đề xuất</h2>
+        <p style = "text-align: center;">Mọi người thường chọn con đường mà họ nghĩ là tốt nhất, nhưng điều quan trọng là lựa chọn phù hợp với bản thân</p>
+        <div class = "procontainer">
+            <div class = "pro">
+                <div onclick = "moreinfo()">
+                <img src = "img/model-718-cayman.png" alt="">
+                <div class = "des">
+                    <span>Porsche</span>
+                    <h5 id = "5">Cayman 718</h5>
+                    <span style ="font-size: 20px;">718 Series
+                    </span>
+                    <section class = "result-features"></section>
+                    <section class="result-highlights-cta">
+                        <div class="result-highlights">
+                            <ul class="highlights-list">
+                                <li>
+                                    <div>
+                                        <span class="tds-text--h4">318</span>
+                                         <span class="">mi</span>
+                                        </div>
+                                        <div class="tds-text--caption">
+                                            <span>Range (est.)</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <span class="tds-text--h4">135</span>
+                                             <span class="">mph</span>
+                                            </div>
+                                            <div class="tds-text--caption">
+                                                <span>Top Speed</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <span class="tds-text--h4">4.8</span>
+                                                 <span class="">s</span>
+                                                </div>
+                                                <div class="tds-text--caption">
+                                                    <span>0-60 mph</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </section>
+                    <section>
+                                    <ul>
+                                    <li>Sơn kim loại màu xanh đậm</li>
+                                    <li>Bánh xe cảm ứng 20''</li>
+                                    <li>Nội thất cao cấp đen trắng</li>
+                                    <li>Nội thất bảy chỗ</li>
+                                    <li>Kéo xô</li>
+                                    <li>Lái tự động</li>
+                                    <li>Bản dùng thử kết nối cao cấp 30 ngày</li>
+                                    </ul>
+                    </section>
+                    <div class = "star">
+                        <i class = "fas fa-star"></i>
+                        <i class = "fas fa-star"></i>
+                        <i class = "fas fa-star"></i>
+                        <i class = "fas fa-star"></i>
+                        <i class = "fas fa-star"></i>
+                    </div>
+                    <h4>$69,000</h4>
+                    <input type = "hidden" name ="price" value ="69000">
+                </div>
+        </div>
+            <button onclick = "a()"><i class="fa-solid fa-cart-shopping" id = "cart"></i></button>
+        </div>
+        <div class = "pro">
+            <div onclick = "moreinfo()">
+            <img src = "img/urus_s_m_0.webp" alt="">
+            <div class = "des">
+                <span>Lamboghini</span>
+                <h5 id = "2">Urus</h5>
+                <span style ="font-size: 20px;">Unlock any road</span>
+                <section class = "result-features"></section>
+                <section class="result-highlights-cta">
+                    <div class="result-highlights">
+                        <ul class="highlights-list">
+                            <li>
+                                <div>
+                                    <span class="tds-text--h4">318</span>
+                                     <span class="">mi</span>
+                                    </div>
+                                    <div class="tds-text--caption">
+                                        <span>Range (est.)</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <span class="tds-text--h4">135</span>
+                                         <span class="">mph</span>
+                                        </div>
+                                        <div class="tds-text--caption">
+                                            <span>Top Speed</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <span class="tds-text--h4">4.8</span>
+                                             <span class="">s</span>
+                                            </div>
+                                            <div class="tds-text--caption">
+                                                <span>0-60 mph</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </section>
+                <section>
+                                <ul>
+                                <li>Sơn kim loại màu xanh đậm</li>
+                                <li>Bánh xe cảm ứng 20''</li>
+                                <li>Nội thất cao cấp đen trắng</li>
+                                <li>Nội thất bảy chỗ</li>
+                                <li>Kéo xô</li>
+                                <li>Lái tự động</li>
+                                <li>Bản dùng thử kết nối cao cấp 30 ngày</li>
+                                </ul>
+                </section>
+                <div class = "star">
+                    <i class = "fas fa-star"></i>
+                    <i class = "fas fa-star"></i>
+                    <i class = "fas fa-star"></i>
+                    <i class = "fas fa-star"></i>
+                    <i class = "fas fa-star"></i>
+                </div>
+                <h4>$241,000</h4>
+                <input type = "hidden" name ="price" value ="241000">
+            </div>
+    </div>
+        <button onclick = "a()"><i class="fa-solid fa-cart-shopping" id = "cart"></i></button>
+    </div>
+         <div class = "pro" >
+            <div onclick = "moreinfo()">
+            <img src = "img/huracan_sterrato_m.webp" alt="">
+            <div class = "des">
+                <span>Lamboghini</span>
+                <h5 id = "3">Huracán</h5>
+                <span style ="font-size: 20px;">Beyond the concrete</span>
+                <section class = "result-features"></section>
+                <section class="result-highlights-cta">
+                    <div class="result-highlights">
+                        <ul class="highlights-list">
+                            <li>
+                                <div>
+                                    <span class="tds-text--h4">318</span>
+                                     <span class="">mi</span>
+                                    </div>
+                                    <div class="tds-text--caption">
+                                        <span>Range (est.)</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <span class="tds-text--h4">135</span>
+                                         <span class="">mph</span>
+                                        </div>
+                                        <div class="tds-text--caption">
+                                            <span>Top Speed</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <span class="tds-text--h4">4.8</span>
+                                             <span class="">s</span>
+                                            </div>
+                                            <div class="tds-text--caption">
+                                                <span>0-60 mph</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </section>
+                <section>
+                                <ul>
+                                <li>Sơn kim loại màu xanh đậm</li>
+                                <li>Bánh xe cảm ứng 20''</li>
+                                <li>Nội thất cao cấp đen trắng</li>
+                                <li>Nội thất bảy chỗ</li>
+                                <li>Kéo xô</li>
+                                <li>Lái tự động</li>
+                                <li>Bản dùng thử kết nối cao cấp 30 ngày</li>
+                                </ul>
+                </section>
+                <div class = "star">
+                    <i class = "fas fa-star"></i>
+                    <i class = "fas fa-star"></i>
+                    <i class = "fas fa-star"></i>
+                    <i class = "fas fa-star"></i>
+                    <i class = "fas fa-star"></i>
+                </div>
+                <h4>$250,000</h4>
+                <input type = "hidden" name ="price" value ="250000">
+            </div>
+    </div>
+        <button onclick = "a()"><i class="fa-solid fa-cart-shopping" id = "cart"></i></button>
+    </div>
+        </div></section>
+        <footer class = "section-p1">
+            <div class = "col" style = "width: 15%;">
+                <img src = "img/logo-black.png" class = "logo">
+                <p>MTKAR - Cửa hàng số một trong lĩnh vực xe hiện đại tại Việt Nam. Cam kết mang đến cho khách hàng trải nghiệm hoàn toàn minh bạch, nhanh chóng và đáng tin cậy.</p>
+            </div>
+            <div class = "col">
+                <h3>Dịch vụ</h3>
+                <a href = "#">Mua xe ô tô</a>
+                <a href = "#">Bán xe ô tô</a>
+                <a href = "#">Trở thành cộng tác viên</a>
+                <a href = "#">Báo giá cửa hàng</a>
+            </div>
+            <div class = "col">
+                <h3>Hỗ trợ</h3>
+                <a href = "#">Mua bảo hiểm ô tô</a>
+                <a href = "#">Trả góp mua xe</a>
+                <a href = "#">Câu hỏi thường gặp</a>
+                <a href = "#">Liên hệ</a>
+            </div>
+            <div class = "col">
+                <h3>Về MTKAR</h3>
+                <a href = "#">Giới thiệu công ty</a>
+                <a href = "#">Tin tức</a>
+                <a href = "#">Chính sách quyền riêng tư</a>
+                <a href = "#">Điều khoản sử dụng</a>
+                <a href = "#">Chứng nhận Carmudi</a>
+            </div>
+        </footer>
+        <div style = "margin: 0 auto;width: 25%;">
+            <h3>Đăng ký nhận thông tin sản phẩm mới</h3>
+            <p>Nhận bản tin để không bõ lỡ thông tin sản phẩm mới và khuyến mãi của MTKAR</p>
+            <input class = "DchiEmail" type ="email" placeholder="Nhập địa chỉ Email" id = "email">
+            <input style="margin: 20px 0 10px 70px;" class = "Dkysubmit" type = "button" value ="Đăng ký" onclick = "emailsubmit()">
+            <hr style = "width:100%;border:0pt solid black;margin-top: 10pt;">
+        </div>
+            <p STYLE = "text-align: center;font-size: 10pt;">CÔNG TY TNHH XE MTKar. Hotline: 0123456789 (Minh Tới Khôi) Số ĐKKD: 123456789</P>
+            <P STYLE = "text-align: center;font-size: 10pt;">Địa chỉ: BVU, Trường đại học Bà Rịa Vũng Tàu, Việt Nam. ©2023 by Car MTKar Limited Liability Company.
+            </P>
+        <script>
+        var btn = document.getElementsByTagName("button");
+        for (let i = 0; i<btn.length;i++)
+        {
+        btn[i].addEventListener("click",function()
+        {
+        var id = btn[i].parentElement.childNodes[1].childNodes[3].childNodes[3].id;
+        var hinh = btn[i].parentElement.childNodes[1].childNodes[1].src;
+        var ten = btn[i].parentElement.childNodes[1].childNodes[3].childNodes[3].innerHTML;
+        var gia = btn[i].parentElement.childNodes[1].childNodes[3].childNodes[17].value;
+        var soluong = 1;
+        var ktra = 0;
+        alert("Đã thêm vào giỏ hàng");
+        for (let j = 0; j <giohang.length;j++)
+        {
+            if (giohang[j]["ten"] == ten)
+            {
+                giohang[j]["soluong"] += soluong;
+                ktra = 1;
+                break;
+            }
+        }
+        if (ktra == 0)
+        {
+        var sp = {
+            "id":id,
+            "hinh":hinh,
+            "ten":ten,
+            "gia":gia,
+            "soluong":soluong
+        }
+        giohang.push(sp);}
+        localStorage.setItem("cart",JSON.stringify(giohang));
+        var cart = JSON.parse(localStorage.getItem("cart"));
+        if (cart!=null)
+        {
+            document.getElementById("slsp").innerHTML = cart.length;
+        }
+        })
+        }
+        </script>
+                <script>
+                    var btn = document.getElementsByTagName("button");
+                for (let i = 0; i<btn.length;i++)
+                {
+                btn[i].addEventListener("click",function()
+                    {
+                        var hinh = btn[i].parentElement.parentElement.childNodes[1].childNodes[1].src;
+                        var ten = btn[i].parentElement.childNodes[3].innerHTML;
+                        var gia = btn[i].parentElement.childNodes[7].value;
+                        var soluong = 1;
+                var ktra = 0;
+                alert("Đã thêm vào giỏ hàng");
+                for (let j = 0; j <giohang.length;j++)
+                {
+                    if (giohang[j]["ten"] == ten)
+                    {
+                        giohang[j]["soluong"] += soluong;
+                        ktra = 1;
+                        break;
+                    }
+                }
+                if (ktra == 0)
+                {
+                var sp = {
+                    "hinh":hinh,
+                    "ten":ten,
+                    "gia":gia,
+                    "soluong":soluong
+                }
+                giohang.push(sp);}
+                localStorage.setItem("cart",JSON.stringify(giohang));
+                var cart = JSON.parse(localStorage.getItem("cart"));
+                if (cart!=null)
+                {
+                    document.getElementById("slsp").innerHTML = cart.length;
+                }
+                })
+                }
+                </script>
+        <script>
+         var MainImg = document.getElementById("MainImg");
+         var smallimg = document.getElementsByClassName("small-img");
+         smallimg[0].onclick =function()
+         {
+            MainImg.src = smallimg[0].src
+         }
+         smallimg[1].onclick =function()
+         {
+            MainImg.src = smallimg[1].src
+         }
+         smallimg[2].onclick =function()
+         {
+            MainImg.src = smallimg[2].src
+         }
+         smallimg[3].onclick =function()
+         {
+            MainImg.src = smallimg[3].src
+         }
+         smallimg[4].onclick =function()
+         {
+            MainImg.src = smallimg[4].src
+         }
+        </script> 
+    

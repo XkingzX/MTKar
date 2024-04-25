@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MTKar - Cửa hàng xe</title>
+    <link rel="stylesheet" href="css/order.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Cập Nhật Thông Tin Tài Khoản</h1>
+        <h3 style="text-align: center;">Trước khi thực hiện thanh toán</h3>
+        <div>
+            <label for="dn_email">Email:</label>
+            <input type="email" id="dn_email" placeholder="Nhập email của bạn">
+        </div>
+        <div>
+            <label for="dn_pass">Mật khẩu:</label>
+            <input type="password" id="dn_pass" placeholder="Nhập mật khẩu của bạn">
+            <button type="button" id="hienthimatkhau">Hiển thị mật khẩu</button>
+        </div>
+        <div>
+            <label for="dn_name">Tên tài khoản:</label>
+            <input type="text" id="dn_name" placeholder="Nhập tên của bạn">
+        </div>
+        <div>
+            <label for="cn_dchi">Địa chỉ:</label>
+            <input type="text" id="cn_dchi" placeholder="Nhập địa chỉ của bạn">
+        </div>
+        <div>
+            <label for="cn_sdt">Số điện thoại:</label>
+            <input type="tel" id="cn_sdt" placeholder="Nhập số điện thoại của bạn">
+        </div>
+        <div>
+            <label for="cn_ngsinh">Ngày sinh:</label>
+            <input type="date" id="cn_ngsinh">
+        </div>
+        <div>
+            <label for="cn_gioitinh">Giới tính:</label>
+            <select id="cn_gioitinh">
+                <option value="Nam">Nam</option>
+                <option value="Nữ">Nữ</option>
+                <option value="Khác">Khác</option>
+            </select>
+        </div>
+        <button onclick="luuThongTin()">Lưu Thông Tin</button>
+    <div id="ketqua"></div>
+    </div>
+    <script src="javascript/orders.js"></script>
+</body>
+</html>

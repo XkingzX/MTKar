@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <html lang="en">
+        <head>
+            <title>MTKar - Cửa hàng xe</title>
+            <link rel = "stylesheet" type = "text/css" href = "css/home.css">
+            <link rel = "stylesheet" type = "text/css" href = "css/about.css">
+            <script src="https://kit.fontawesome.com/77f2b086b8.js" crossorigin="anonymous"></script>
+            <script lang = "Javascript" src ="javascript/home.js"></script>
+        </head>
+        <body onload ="loaddatacart()">
+            <script>
+                window.onload = function(){
+                    var thongtintaikhoan = JSON.parse(localStorage.getItem('thongtintaikhoan')) || {};
+                    var dangxuat = document.getElementById('dangxuat');
+                    var chuadangnhap = document.getElementById('chuadangnhap');
+                    var thongtincanhan = document.getElementById('thongtincanhan');
+
+                    if (thongtintaikhoan.taikhoan) {
+                    dangxuat.textContent = "Đăng xuất";
+                    thongtincanhan.textContent = "Thông tin cá nhân";
+                    } else {
+                    chuadangnhap.textContent = "Đăng nhập";
+                    }
+                };
+                function donmua(){
+                var laydulieu = localStorage.getItem('thongtintaikhoan');
+                if (laydulieu !== null) {
+
+                    var thongtintaikhoan = JSON.parse(laydulieu);
+                    window.location.href="purchase.html";
+                }
+                else
+                    alert("Để xem đơn hàng bạn cần tạo tài khoản");
+                }
+                function thongtincanhan(){
+                window.location.href = "order.html";
+                }
+            </script>
+            <section id = "header" >
+                <a href = "home.html"><img src = "img/mtkar-high-resolution-logo-transparent.png" class = "logo" alt = ""></a>
+                <div>
+                    <ul id = "navbar">
+                        <li><a href = "home.html">Trang chủ</a></li>
+                        <li><a href = "shop.html">Cửa hàng</a></li>
+                        <li><a href = "about.html">Giới thiệu</a></li>  
+                        <li><a href ="#"><i class="fa-solid fa-user"></i></a>
+                            <div class = "dropdown">
+                            <ul >
+                                <li><a href = "dangnhap.html" id="chuadangnhap"></a></li>
+                                <li><a href = "#" onclick="thongtincanhan()" id="thongtincanhan"></a></li>
+                                <li><a href = "cart.html">Giỏ hàng: <span id = "slsp"></span></a></li>
+                                <li><a href = "#" onclick="donmua()">Đơn mua</a></li>
+                                <li><a href = "dangnhap.html" id="dangxuat"></a></li>
+                            </ul>
+                        </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+                <div class = "maintitle">
+                    <h2>Giới thiệu về MTKAR</h2><br>
+                    <h4>Uy tín tạo nên thương hiệu </h4>
+                    <h5>Chào mừng bạn đến với MTKAR, nơi mua sắm xe hơi trực tuyến hàng đầu, nơi bạn có thể tìm thấy một loạt các mẫu xe từ các thương hiệu nổi tiếng đến những dòng xe độc đáo. Tại MTKAR, chúng tôi cam kết mang đến cho bạn trải nghiệm mua sắm xe không chỉ tiện lợi mà còn đáng tin cậy và đầy cảm hứng.</h5>
+                    <img src = "img/logo-black.png" height="350px">
+                 </div>
+                 <div class = "content">
+                    <div class = "leftcontent">
+                        <h3>Đa dạng sản phẩm</h3>
+                        <span>Từ những chiếc sedan sang trọng, SUV mạnh mẽ đến những chiếc xe thể thao nhanh nhẹn, MTKAR cung cấp một thư viện xe đa dạng, đáp ứng mọi nhu cầu và sở thích của bạn.</span>
+                        <br><br><h3>Chất Lượng Đảm Bảo</h3>
+                        <span>Mỗi chiếc xe trên MTKAR đều được kiểm định nghiêm ngặt về chất lượng và bảo hành, đảm bảo bạn có thể mua sắm với sự an tâm tuyệt đối.</span>
+                        <br><br><h3>Ưu Đãi Hấp Dẫn</h3>
+                        <span>MTKAR thường xuyên có các chương trình khuyến mãi, giảm giá và quà tặng hấp dẫn cho khách hàng. Bạn sẽ không chỉ mua được chiếc xe ưng ý mà còn tiết kiệm được một khoản tiền đáng kể.</span>
+                        <br><br><h3>Dịch Vụ Khách Hàng Xuất Sắc</h3>
+                        <span> Đội ngũ chăm sóc khách hàng của chúng tôi luôn sẵn sàng hỗ trợ bạn trong mọi bước của quá trình mua xe, từ việc tư vấn chọn mẫu xe phù hợp đến việc hỗ trợ sau mua hàng.</span>
+                    </div>
+                    <div class = "rightcontent">
+                        <img class = "contentimg" src = "img/02_s2.webp">
+                        <img class = "contentimg" src = "img/About-Us-Exceptional-Desktop-Global.avif">
+                    </div>
+                 </div>
+                 <div id ="tagsec">
+                    <div class = "tag">
+                        <h5 class = "item-title">Mục tiêu của chúng tôi</h5>
+                        <p class="item-desc">MTKAR mong muốn góp phần làm cho thế giới trở nên tốt đẹp hơn bằng sức mạnh công nghệ thông qua việc kết nối cộng đồng người mua và người bán.</p>
+                    </div>
+                    <div class = "tag">
+                        <h5 class ="item-title">Định vị của chúng tôi</h5>
+                        <p data-v-fa8dd70a="" class="item-desc">Thông qua MTKAR, người dùng Internet trên toàn khu vực có thể trải nghiệm mua sắm trực tuyến với các sản phẩm đa dạng, kết nối với cộng đồng người bán, và tận hưởng quá trình nhận hàng liền mạch.</p>
+                    </div>
+                 </div>
+                 <div id = "tagseccenter">
+                 <div class = "tag">
+                    <h5 class ="item-title">Phương châm của chúng tôi</h5>
+                    <p class="item-desc">Phương châm Simple, Happy and Together xác định tính cách thương hiệu MTKAR thông qua lời nói và hành động. Phương châm này hiện hữu ở bất cứ đâu trong hành trình phát triển của chúng tôi.</p>
+                </div> 
+                 </div> 
+                <footer class = "section-p1"style = "margin-top:50pt">
+                    <div class = "col" style = "width: 15%;">
+                        <img src = "img/logo-black.png" class = "logo">
+                        <p>MTKAR - Cửa hàng số một trong lĩnh vực xe hiện đại tại Việt Nam. Cam kết mang đến cho khách hàng trải nghiệm hoàn toàn minh bạch, nhanh chóng và đáng tin cậy.</p>
+                    </div>
+                    <div class = "col">
+                        <h3>Dịch vụ</h3>
+                        <a href = "#">Mua xe ô tô</a>
+                        <a href = "#">Bán xe ô tô</a>
+                        <a href = "#">Trở thành cộng tác viên</a>
+                        <a href = "#">Báo giá cửa hàng</a>
+                    </div>
+                    <div class = "col">
+                        <h3>Hỗ trợ</h3>
+                        <a href = "#">Mua bảo hiểm ô tô</a>
+                        <a href = "#">Trả góp mua xe</a>
+                        <a href = "#">Câu hỏi thường gặp</a>
+                        <a href = "#">Liên hệ</a>
+                    </div>
+                    <div class = "col">
+                        <h3>Về MTKAR</h3>
+                        <a href = "#">Giới thiệu công ty</a>
+                        <a href = "#">Tin tức</a>
+                        <a href = "#">Chính sách quyền riêng tư</a>
+                        <a href = "#">Điều khoản sử dụng</a>
+                        <a href = "#">Chứng nhận Carmudi</a>
+                    </div>
+                </footer>
+                <div style = "margin: 0 auto;width: 25%;">
+                    <h3>Đăng ký nhận thông tin sản phẩm mới</h3>
+                    <p>Nhận bản tin để không bõ lỡ thông tin sản phẩm mới và khuyến mãi của MTKAR</p>
+                    <input class = "DchiEmail" type ="email" placeholder="Nhập địa chỉ Email" id = "email">
+                    <input style="margin: 20px 0 10px 70px;" class = "Dkysubmit" type = "button" value ="Đăng ký" onclick = "emailsubmit()">
+                    <hr style = "width:100%;border:0pt solid black;margin-top: 10pt;">
+                </div>
+                    <p STYLE = "text-align: center;font-size: 10pt;">CÔNG TY TNHH XE MTKar. Hotline: 0123456789 (Minh Tới Khôi) Số ĐKKD: 123456789</P>
+                    <P STYLE = "text-align: center;font-size: 10pt;">Địa chỉ: BVU, Trường đại học Bà Rịa Vũng Tàu, Việt Nam. ©2023 by Car MTKar Limited Liability Company.
+                    </P>
+                </body>
+                </html>
+     

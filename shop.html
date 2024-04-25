@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MTKar - Cửa hàng xe</title>
+    <link rel = "stylesheet" type = "text/css" href = "css/home.css">
+    <link rel = "stylesheet" type = "text/css" href = "css/shop.css">
+    <script src="https://kit.fontawesome.com/77f2b086b8.js" crossorigin="anonymous"></script>
+    <script lang = "Javascript" src ="javascript/home.js"></script>
+    <script lang = "Javascript" src ="javascript/shop.js"></script>
+</head>
+<body onload = "loaddatahome()">
+    <script>
+        window.onload = function(){
+            var thongtintaikhoan = JSON.parse(localStorage.getItem('thongtintaikhoan')) || {};
+            var dangxuat = document.getElementById('dangxuat');
+            var chuadangnhap = document.getElementById('chuadangnhap');
+            var thongtincanhan = document.getElementById('thongtincanhan');
+
+            if (thongtintaikhoan.taikhoan) {
+            dangxuat.textContent = "Đăng xuất";
+            thongtincanhan.textContent = "Thông tin cá nhân";
+            } else {
+            chuadangnhap.textContent = "Đăng nhập";
+            }
+        };
+        function donmua(){
+                var laydulieu = localStorage.getItem('thongtintaikhoan');
+                if (laydulieu !== null) {
+
+                    var thongtintaikhoan = JSON.parse(laydulieu);
+                    window.location.href="purchase.html";
+                }
+                else
+                    alert("Để xem đơn hàng bạn cần tạo tài khoản");
+                }
+    </script>
+    <section id = "header" >
+        <a href = "home.html"><img src = "img/mtkar-high-resolution-logo-transparent.png" class = "logo" alt = ""></a>
+        <div>
+            <ul id = "navbar">
+                <li><a href = "home.html">Trang chủ</a></li>
+                <li><a href = "shop.html">Cửa hàng</a></li>
+                <li><a href = "about.html">Giới thiệu</a></li>  
+                <li><a href ="#"><i class="fa-solid fa-user"></i></a>
+                    <div class = "dropdown">
+                    <ul >
+                        <li><a href = "dangnhap.html" id="chuadangnhap"></a></li>
+                        <li><a href = "order.html" id="thongtincanhan"></a></li>
+                        <li><a href = "cart.html">Giỏ hàng: <span id = "slsp"></span></a></li>
+                        <li><a href = "#" onclick="donmua()">Đơn mua</a></li>
+                        <li><a href = "dangnhap.html" id="dangxuat"></a></li>
+                    </ul>
+                </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section id = "collection">
+        <div class ="sidebar">
+            <div class = "filter">
+                <div><h3>Danh sách <br>sản phẩm</h3></div>
+                <div class = "filter_buttons">
+                    <button class ="active" data-name ="all">Show all</button>
+                    <button data-name ="lamboghini">Lamboghini</button>
+                    <button data-name ="tesla">Tesla</button>
+                    <button data-name ="bmw">BMW</button>
+                    <button data-name ="porsche">Porsche</button>
+                </div>
+            </div>
+          </div>
+    <div class="collection__sort">
+        <span class="h3">Sort by</span>
+        <facet-filters-form class="facets facets-vertical-sort">
+          <form class="facets-vertical-form" id="FacetSortForm">
+            <div class="facet-filters sorting caption">
+              <div class="facet-filters__field">
+                <div class="select">
+                    <select aria-describedby="a11y-refresh-page-message" class="facet-filters__sort select__select caption-large" id="SortBy" name="sort_by">
+                        <option value="manual" selected="selected">Featured</option>
+                        <option value="best-selling">Best selling</option>
+                        <option value="title-ascending">Alphabetically, A-Z</option>
+                        <option value="title-descending">Alphabetically, Z-A</option>
+                        <option value="price-ascending">Price, low to high</option>
+                        <option value="price-descending">Price, high to low</option>
+                        <option value="created-ascending">Date, old to new</option>
+                        <option value="created-descending">Date, new to old</option></select>
+                        
+                </div>
+              </div>
+            </div>
+          </form>
+        </facet-filters-form>
+      </div>
+        <section id = "contant" class = "section-p1">
+            <div class = "procontainer">
+            <div class = "pro" data-name="lamboghini" >
+               <div class = "card"  onclick = "moreinfo()">
+                <img src = "img/revuelto_m.webp" alt="lamboghini">
+                <div class = "des">
+                    <span>Lamboghini</span>
+                    <h5 id = "1">Revuelto</h5>
+                    <span style ="font-size: 20px;">From now on</span>
+                    <section class = "result-features"></section>
+                    <section class="result-highlights-cta">
+                        <div class="result-highlights">
+                            <ul class="highlights-list">
+                                <li>
+                                    <div>
+                                        <span class="tds-text--h4">318</span>
+                                         <span class="">mi</span>
+                                        </div>
+                                        <div class="tds-text--caption">
+                                            <span>Range (est.)</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <span class="tds-text--h4">135</span>
+                                             <span class="">mph</span>
+                                            </div>
+                                            <div class="tds-text--caption">
+                                                <span>Top Speed</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <span class="tds-text--h4">4.8</span>
+                                                 <span class="">s</span>
+                                                </div>
+                                                <div class="tds-text--caption">
+                                                    <span>0-60 mph</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </section>
+                                <section>
+                                    <ul>
+                                    <li>Sơn kim loại màu xanh đậm</li>
+                                    <li>Bánh xe cảm ứng 20''</li>
+                                    <li>Nội thất cao cấp đen trắng</li>
+                                    <li>Nội thất bảy chỗ</li>
+                                    <li>Kéo xô</li>
+                                    <li>Lái tự động</li>
+                                    <li>Bản dùng thử kết nối cao cấp 30 ngày</li>
+                                    </ul>
+                    </section>
+                    <div class = "star">
+                        <i class = "fas fa-star"></i>
+                        <i class = "fas fa-star"></i>
+                        <i class = "fas fa-star"></i>
+                        <i class = "fas fa-star"></i>
+                        <i class = "fas fa-star"></i>
+                    </div>
+                    <h4>$</h4><span style ="font-size: 15pt;color:black;font-weight: bold;margin-left: 2pt;">608,000</span>
+                    <input type = "hidden" name ="price" value ="608000">
+                </div>
+        </div>
+            <button onclick = "a()"><i class="fa-solid fa-cart-shopping" id = "cart"></i></button>
+        </div>
+        <div class = "pro" data-name="lamboghini">
+            <div class ="card"  onclick = "moreinfo()">
+            <img src = "img/urus_s_m_0.webp" alt="lamboghini">
+            <div class = "des">
+                <span>Lamboghini</span>
+                <h5 id = "2">Urus</h5>
+                <span style ="font-size: 20px;">Unlock any road</span>
+                <section class = "result-features"></section>
+                <section class="result-highlights-cta">
+                    <div class="result-highlights">
+                        <ul class="highlights-list">
+                            <li>
+                                <div>
+                                    <span class="tds-text--h4">318</span>
+                                     <span class="">mi</span>
+                                    </div>
+                                    <div class="tds-text--caption">
+                                        <span>Range (est.)</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <span class="tds-text--h4">135</span>
+                                         <span class="">mph</span>
+                                        </div>
+                                        <div class="tds-text--caption">
+                                            <span>Top Speed</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <span class="tds-text--h4">4.8</span>
+                                             <span class="">s</span>
+                                            </div>
+                                            <div class="tds-text--caption">
+                                                <span>0-60 mph</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </section>
+                <section>
+                                <ul>
+                                <li>Sơn kim loại màu xanh đậm</li>
+                                <li>Bánh xe cảm ứng 20''</li>
+                                <li>Nội thất cao cấp đen trắng</li>
+                                <li>Nội thất bảy chỗ</li>
+                                <li>Kéo xô</li>
+                                <li>Lái tự động</li>
+                                <li>Bản dùng thử kết nối cao cấp 30 ngày</li>
+                                </ul>
+                </section>
+                <div class = "star">
+                    <i class = "fas fa-star"></i>
+                    <i class = "fas fa-star"></i>
+                    <i class = "fas fa-star"></i>
+                    <i class = "fas fa-star"></i>
+                    <i class = "fas fa-star"></i>
+                </div>
+                <h4>$</h4><span style ="font-size: 15pt;color:black;font-weight: bold;margin-left: 2pt;">241,000</span>
+                <input type = "hidden" name ="price" value ="241000">
+            </div>
+    </div>
+        <button onclick = "a()"><i class="fa-solid fa-cart-shopping" id = "cart"></i></button>
+    </div>
+         <div class = "pro" data-name="lamboghini" >
+            <div class ="card" onclick = "moreinfo()">
+            <img src = "img/huracan_sterrato_m.webp" alt="lamboghini">
+            <div class = "des">
+                <span>Lamboghini</span>
+                <h5 id = "3">Huracán</h5>
+                <span style ="font-size: 20px;">Beyond the concrete</span>
+                <section class = "result-features"></section>
+                <section class="result-highlights-cta">
+                    <div class="result-highlights">
+                        <ul class="highlights-list">
+                            <li>
+                                <div>
+                                    <span class="tds-text--h4">318</span>
+                                     <span class="">mi</span>
+                                    </div>
+                                    <div class="tds-text--caption">
+                                        <span>Range (est.)</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <span class="tds-text--h4">135</span>
+                                         <span class="">mph</span>
+                                        </div>
+                                        <div class="tds-text--caption">
+                                            <span>Top Speed</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <span class="tds-text--h4">4.8</span>
+                                             <span class="">s</span>
+                                            </div>
+                                            <div class="tds-text--caption">
+                                                <span>0-60 mph</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </section>
+                <section>
+                                <ul>
+                                <li>Sơn kim loại màu xanh đậm</li>
+                                <li>Bánh xe cảm ứng 20''</li>
+                                <li>Nội thất cao cấp đen trắng</li>
+                                <li>Nội thất bảy chỗ</li>
+                                <li>Kéo xô</li>
+                                <li>Lái tự động</li>
+                                <li>Bản dùng thử kết nối cao cấp 30 ngày</li>
+                                </ul>
+                </section>
+                <div class = "star">
+                    <i class = "fas fa-star"></i>
+                    <i class = "fas fa-star"></i>
+                    <i class = "fas fa-star"></i>
+                    <i class = "fas fa-star"></i>
+                    <i class = "fas fa-star"></i>
+                </div>
+                <h4>$</h4><span style ="font-size: 15pt;color:black;font-weight: bold;margin-left: 2pt;">250,000</span>
+                <input type = "hidden" name ="price" value ="250000">
+            </div>
+    </div>
+        <button onclick = "a()"><i class="fa-solid fa-cart-shopping" id = "cart"></i></button>
+    </div>
+    <div class = "pro" data-name="tesla" >
+        <div class ="card"  onclick = "moreinfo()">
+        <img src = "img/2021-tesla-model-s-1-5568-1611825229.jpg" height="210px" alt="tesla">
+        <div class = "des">
+            <span>Tesla</span>
+            <h5 id = "9">Model S</h5>
+            <span style ="font-size: 20px;">Interior of the Future </span>
+            <section class = "result-features"></section>
+            <section class="result-highlights-cta">
+                <div class="result-highlights">
+                    <ul class="highlights-list">
+                        <li>
+                            <div>
+                                <span class="tds-text--h4">318</span>
+                                 <span class="">mi</span>
+                                </div>
+                                <div class="tds-text--caption">
+                                    <span>Range (est.)</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <span class="tds-text--h4">135</span>
+                                     <span class="">mph</span>
+                                    </div>
+                                    <div class="tds-text--caption">
+                                        <span>Top Speed</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <span class="tds-text--h4">4.8</span>
+                                         <span class="">s</span>
+                                        </div>
+                                        <div class="tds-text--caption">
+                                            <span>0-60 mph</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
+            <section>
+                            <ul>
+                            <li>Sơn kim loại màu xanh đậm</li>
+                            <li>Bánh xe cảm ứng 20''</li>
+                            <li>Nội thất cao cấp đen trắng</li>
+                            <li>Nội thất bảy chỗ</li>
+                            <li>Kéo xô</li>
+                            <li>Lái tự động</li>
+                            <li>Bản dùng thử kết nối cao cấp 30 ngày</li>
+                            </ul>
+            </section>
+            <div class = "star">
+                <i class = "fas fa-star"></i>
+                <i class = "fas fa-star"></i>
+                <i class = "fas fa-star"></i>
+                <i class = "fas fa-star"></i>
+                <i class = "fas fa-star"></i>
+            </div>
+            <h4>$</h4><span style ="font-size: 15pt;color:black;font-weight: bold;margin-left: 2pt;">36,000</span>
+            <input type = "hidden" name ="price" value ="36000">
+        </div>
+</div>
+    <button onclick = "a()"><i class="fa-solid fa-cart-shopping" id = "cart"></i></button>
+</div>
+        <div class = "pro" data-name="tesla">
+            <div class ="card"  onclick = "moreinfo()">
+            <img src = "img/Model-Y.avif"  alt="tesla">
+            <div class = "des">
+                <span>Tesla</span>
+                <h5 id = "4">Model Y</h5>
+                <span style ="font-size: 20px;">Model Y Long Range Dual Motor All-Wheel Drive
+                </span>
+                <section class = "result-features"></section>
+                <section class="result-highlights-cta">
+                    <div class="result-highlights">
+                        <ul class="highlights-list">
+                            <li>
+                                <div>
+                                    <span class="tds-text--h4">318</span>
+                                     <span class="">mi</span>
+                                    </div>
+                                    <div class="tds-text--caption">
+                                        <span>Range (est.)</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <span class="tds-text--h4">135</span>
+                                         <span class="">mph</span>
+                                        </div>
+                                        <div class="tds-text--caption">
+                                            <span>Top Speed</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <span class="tds-text--h4">4.8</span>
+                                             <span class="">s</span>
+                                            </div>
+                                            <div class="tds-text--caption">
+                                                <span>0-60 mph</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </section>
+                <section>
+                                <ul>
+                                <li>Sơn kim loại màu xanh đậm</li>
+                                <li>Bánh xe cảm ứng 20''</li>
+                                <li>Nội thất cao cấp đen trắng</li>
+                                <li>Nội thất bảy chỗ</li>
+                                <li>Kéo xô</li>
+                                <li>Lái tự động</li>
+                                <li>Bản dùng thử kết nối cao cấp 30 ngày</li>
+                                </ul>
+                </section>
+                <div class = "star">
+                    <i class = "fas fa-star"></i>
+                    <i class = "fas fa-star"></i>
+                    <i class = "fas fa-star"></i>
+                    <i class = "fas fa-star"></i>
+                    <i class = "fas fa-star"></i>
+                </div>
+                <h4>$</h4><span style ="font-size: 15pt;color:black;font-weight: bold;margin-left: 2pt;">36,000</span>
+                <input type = "hidden" name ="price" value ="36000">
+            </div>
+    </div>
+        <button onclick = "a()"><i class="fa-solid fa-cart-shopping" id = "cart"></i></button>
+    </div>
+    <div class = "pro" data-name="porsche">
+        <div class ="card"  onclick = "moreinfo()">
+        <img src = "img/model-718-cayman.png" height="210px" alt="porsche">
+        <div class = "des">
+            <span>Porsche</span>
+            <h5 id = "5">Cayman 718</h5>
+            <span style ="font-size: 20px;">718 Series
+            </span>
+            <section class = "result-features"></section>
+            <section class="result-highlights-cta">
+                <div class="result-highlights">
+                    <ul class="highlights-list">
+                        <li>
+                            <div>
+                                <span class="tds-text--h4">318</span>
+                                 <span class="">mi</span>
+                                </div>
+                                <div class="tds-text--caption">
+                                    <span>Range (est.)</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <span class="tds-text--h4">135</span>
+                                     <span class="">mph</span>
+                                    </div>
+                                    <div class="tds-text--caption">
+                                        <span>Top Speed</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <span class="tds-text--h4">4.8</span>
+                                         <span class="">s</span>
+                                        </div>
+                                        <div class="tds-text--caption">
+                                            <span>0-60 mph</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
+            <section>
+                            <ul>
+                            <li>Sơn kim loại màu xanh đậm</li>
+                            <li>Bánh xe cảm ứng 20''</li>
+                            <li>Nội thất cao cấp đen trắng</li>
+                            <li>Nội thất bảy chỗ</li>
+                            <li>Kéo xô</li>
+                            <li>Lái tự động</li>
+                            <li>Bản dùng thử kết nối cao cấp 30 ngày</li>
+                            </ul>
+            </section>
+            <div class = "star">
+                <i class = "fas fa-star"></i>
+                <i class = "fas fa-star"></i>
+                <i class = "fas fa-star"></i>
+                <i class = "fas fa-star"></i>
+                <i class = "fas fa-star"></i>
+            </div>
+            <h4>$</h4><span style ="font-size: 15pt;color:black;font-weight: bold;margin-left: 2pt;">69,000</span>
+            <input type = "hidden" name ="price" value ="69000">
+        </div>
+</div>
+    <button onclick = "a()"><i class="fa-solid fa-cart-shopping" id = "cart"></i></button>
+</div>
+    <div class = "pro" data-name="porsche" >
+        <div class ="card"  onclick = "moreinfo()">
+        <img src = "img/panamera 4.png" alt="porsche">
+        <div class = "des">
+            <span>Porsche</span>
+            <h5 id = "7">Panamera 4</h5>
+            <span style ="font-size: 20px;">Executive 233637</span>
+            <section class = "result-features"></section>
+            <section class="result-highlights-cta">
+                <div class="result-highlights">
+                    <ul class="highlights-list">
+                        <li>
+                            <div>
+                                <span class="tds-text--h4">318</span>
+                                 <span class="">mi</span>
+                                </div>
+                                <div class="tds-text--caption">
+                                    <span>Range (est.)</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <span class="tds-text--h4">135</span>
+                                     <span class="">mph</span>
+                                    </div>
+                                    <div class="tds-text--caption">
+                                        <span>Top Speed</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <span class="tds-text--h4">4.8</span>
+                                         <span class="">s</span>
+                                        </div>
+                                        <div class="tds-text--caption">
+                                            <span>0-60 mph</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
+            <section>
+                            <ul>
+                            <li>Sơn kim loại màu xanh đậm</li>
+                            <li>Bánh xe cảm ứng 20''</li>
+                            <li>Nội thất cao cấp đen trắng</li>
+                            <li>Nội thất bảy chỗ</li>
+                            <li>Kéo xô</li>
+                            <li>Lái tự động</li>
+                            <li>Bản dùng thử kết nối cao cấp 30 ngày</li>
+                            </ul>
+            </section>
+            <div class = "star">
+                <i class = "fas fa-star"></i>
+                <i class = "fas fa-star"></i>
+                <i class = "fas fa-star"></i>
+                <i class = "fas fa-star"></i>
+                <i class = "fas fa-star"></i>
+            </div>
+            <h4>$</h4><span style ="font-size: 15pt;color:black;font-weight: bold;margin-left: 2pt;">103,000</span>
+            <input type = "hidden" name ="price" value ="103000">
+        </div>
+</div>
+    <button onclick = "a()"><i class="fa-solid fa-cart-shopping" id = "cart"></i></button>
+</div>
+    <div class = "pro" data-name="bmw">
+        <div class ="card"  onclick = "moreinfo()">
+        <img src = "img/0f548342d18971c6a44c213d98fa8020.png" style ="height: 180px;" alt="bmw">
+        <div class = "des">
+            <span>BMW</span>
+            <h5  id = "8">BMW 330</h5>
+            <span style ="font-size: 20px;">BMW 3 Series</span>
+            <section class = "result-features"></section>
+            <section class="result-highlights-cta">
+                <div class="result-highlights">
+                    <ul class="highlights-list">
+                        <li>
+                            <div>
+                                <span class="tds-text--h4">318</span>
+                                 <span class="">mi</span>
+                                </div>
+                                <div class="tds-text--caption">
+                                    <span>Range (est.)</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <span class="tds-text--h4">135</span>
+                                     <span class="">mph</span>
+                                    </div>
+                                    <div class="tds-text--caption">
+                                        <span>Top Speed</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <span class="tds-text--h4">4.8</span>
+                                         <span class="">s</span>
+                                        </div>
+                                        <div class="tds-text--caption">
+                                            <span>0-60 mph</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
+            <section>
+                            <ul>
+                            <li>Sơn kim loại màu xanh đậm</li>
+                            <li>Bánh xe cảm ứng 20''</li>
+                            <li>Nội thất cao cấp đen trắng</li>
+                            <li>Nội thất bảy chỗ</li>
+                            <li>Kéo xô</li>
+                            <li>Lái tự động</li>
+                            <li>Bản dùng thử kết nối cao cấp 30 ngày</li>
+                            </ul>
+            </section>
+            <div class = "star">
+                <i class = "fas fa-star"></i>
+                <i class = "fas fa-star"></i>
+                <i class = "fas fa-star"></i>
+                <i class = "fas fa-star"></i>
+                <i class = "fas fa-star"></i>
+            </div>
+            <h4>$</h4><span style ="font-size: 15pt;color:black;font-weight: bold;margin-left: 2pt;">105,000</span>
+            <input type = "hidden" name ="price" value ="105000">
+        </div>
+</div>
+    <button onclick = "a()"><i class="fa-solid fa-cart-shopping" id = "cart"></i></button>
+</div>
+<div class = "pro" data-name="bmw">
+    <div class ="card"  onclick = "moreinfo()">
+    <img src = "img/i7 2.png" height="180px" alt="bmw">
+    <div class = "des">
+        <span>BMW</span>
+        <h5 id = "6">BMW i7 Sedan</h5>
+        <span style ="font-size: 20px;">The fully electric BMW I7</span>
+        <section class = "result-features"></section>
+        <section class="result-highlights-cta">
+            <div class="result-highlights">
+                <ul class="highlights-list">
+                    <li>
+                        <div>
+                            <span class="tds-text--h4">318</span>
+                             <span class="">mi</span>
+                            </div>
+                            <div class="tds-text--caption">
+                                <span>Range (est.)</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <span class="tds-text--h4">135</span>
+                                 <span class="">mph</span>
+                                </div>
+                                <div class="tds-text--caption">
+                                    <span>Top Speed</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <span class="tds-text--h4">4.8</span>
+                                     <span class="">s</span>
+                                    </div>
+                                    <div class="tds-text--caption">
+                                        <span>0-60 mph</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+        <section>
+                        <ul>
+                        <li>Sơn kim loại màu xanh đậm</li>
+                        <li>Bánh xe cảm ứng 20''</li>
+                        <li>Nội thất cao cấp đen trắng</li>
+                        <li>Nội thất bảy chỗ</li>
+                        <li>Kéo xô</li>
+                        <li>Lái tự động</li>
+                        <li>Bản dùng thử kết nối cao cấp 30 ngày</li>
+                        </ul>
+        </section>
+        <div class = "star">
+            <i class = "fas fa-star"></i>
+            <i class = "fas fa-star"></i>
+            <i class = "fas fa-star"></i>
+            <i class = "fas fa-star"></i>
+            <i class = "fas fa-star"></i>
+        </div>
+        <h4>$</h4><span style ="font-size: 15pt;color:black;font-weight: bold;margin-left: 2pt;">105,000</span>
+        <input type = "hidden" name ="price" value ="105000">
+    </div>
+</div>
+<button onclick = "a()"><i class="fa-solid fa-cart-shopping" id = "cart"></i></button>
+</div>
+    </div>
+    </div>
+    </section>
+    </section>
+    <script>
+        var btn = document.getElementsByTagName("button");
+    for (let i = 0; i<btn.length;i++)
+    {
+    btn[i].addEventListener("click",function()
+    {
+    var id = btn[i].parentElement.childNodes[1].childNodes[3].childNodes[3].id;
+    var hinh = btn[i].parentElement.childNodes[1].childNodes[1].src;
+    var ten = btn[i].parentElement.childNodes[1].childNodes[3].childNodes[3].innerHTML;
+    var gia = btn[i].parentElement.childNodes[1].childNodes[3].childNodes[18].value;
+    var soluong = 1;
+    var ktra = 0;
+    alert("Đã thêm vào giỏ hàng");
+    for (let j = 0; j <giohang.length;j++)
+    {
+        if (giohang[j]["ten"] == ten)
+        {
+            giohang[j]["soluong"] += soluong;
+            ktra = 1;
+            break;
+        }
+    }
+    if (ktra == 0)
+    {
+    var sp = {
+        "id":id,
+        "hinh":hinh,
+        "ten":ten,
+        "gia":gia,
+        "soluong":soluong
+    }
+    giohang.push(sp);}
+    localStorage.setItem("cart",JSON.stringify(giohang));
+    var cart = JSON.parse(localStorage.getItem("cart"));
+    if (cart!=null)
+    {
+        document.getElementById("slsp").innerHTML = cart.length;
+    }
+    })
+    }
+    </script>
+
+<script>
+const filterButtons = document.querySelectorAll(".filter_buttons button");
+const filterPro = document.querySelectorAll(".pro");
+const filterPros = e =>
+{
+    document.querySelector(".active").classList.remove("active");
+    e.target.classList.add("active")
+    filterPro.forEach(pro => {
+        pro.classList.add("hide");
+        if(pro.dataset.name === e.target.dataset.name || e.target.dataset.name === "all")
+        pro.classList.remove("hide");
+    })
+}
+filterButtons.forEach(button =>button.addEventListener("click",filterPros));
+    </script>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <html lang="en">
+        <head>
+            <title>MTKar - Cửa hàng xe</title>
+            <link rel = "stylesheet" type = "text/css" href = "css/home.css">
+            <script src="https://kit.fontawesome.com/77f2b086b8.js" crossorigin="anonymous"></script>
+            <script lang = "Javascript" src ="javascript/home.js"></script>
+        </head>
+        <body onload ="loaddatacart()">
+            <script>
+                function donmua(){
+                var laydulieu = localStorage.getItem('thongtintaikhoan');
+                if (laydulieu !== null) {
+
+                    var thongtintaikhoan = JSON.parse(laydulieu);
+                    window.location.href="purchase.html";
+                }
+                else
+                    alert("Để xem đơn hàng bạn cần tạo tài khoản");
+                }
+                function thongtincanhan(){
+                window.location.href = "order.html";
+                }
+            </script>
+            <section id = "header" >
+                <a href = "home.html"><img src = "img/mtkar-high-resolution-logo-transparent.png" class = "logo" alt = ""></a>
+                <div>
+                    <ul id = "navbar">
+                        <li><a href = "home.html">Trang chủ</a></li>
+                        <li><a href = "shop.html">Cửa hàng</a></li>
+                        <li><a href = "about.html">Giới thiệu</a></li>  
+                        <li><a href ="#"><i class="fa-solid fa-user"></i></a>
+                            <div class = "dropdown">
+                            <ul >
+                                <li><a href = "dangnhap.html" id="chuadangnhap"></a></li>
+                                <li><a href = "#" onclick="thongtincanhan()" id="thongtincanhan"></a></li>
+                                <li><a href = "cart.html">Giỏ hàng: <span id = "slsp"></span></a></li>
+                                <li><a href = "#" onclick="donmua()">Đơn mua</a></li>
+                                <li><a href = "dangnhap.html" id="dangxuat"></a></li>
+                            </ul>
+                        </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section style = "height: 700pt;">
+                <h2 style = "margin:20pt 0 0 20pt">Giỏ hàng</h2>
+                <div class = "tableleft">
+                    <table class = "tableleft1" cellspacing = "0pt">
+                        <tr>
+                            <th>STT</th>
+                            <th>Hình</th>
+                            <th>Tên sp</th>
+                            <th>Đơn giá</th>
+                            <th>Số lượng</th>
+                            <th style = "width: 70pt;">Xóa</th>
+                        </tr>
+                        <tbody id ="thongtingiohang">
+
+                        </tbody>
+                    </table>
+                    <br>
+                    <input class = "xoarongbt" type = "button" value = "Xóa rỗng giỏ hàng" onclick = "delcart()">
+                </div>
+                <div class = "tableright">
+                    <h2 id ="tongdonhang"></h2>
+                    <input type = "button" value = "Thanh Toán" class = "thanhtoanbt" onclick = "openorder()">
+                </div>
+            </section>
+            <footer class = "section-p1">
+                <div class = "col" style = "width: 15%;">
+                    <img src = "img/logo-black.png" class = "logo">
+                    <p>MTKAR - Cửa hàng số một trong lĩnh vực xe hiện đại tại Việt Nam. Cam kết mang đến cho khách hàng trải nghiệm hoàn toàn minh bạch, nhanh chóng và đáng tin cậy.</p>
+                </div>
+                <div class = "col">
+                    <h3>Dịch vụ</h3>
+                    <a href = "#">Mua xe ô tô</a>
+                    <a href = "#">Bán xe ô tô</a>
+                    <a href = "#">Trở thành cộng tác viên</a>
+                    <a href = "#">Báo giá cửa hàng</a>
+                </div>
+                <div class = "col">
+                    <h3>Hỗ trợ</h3>
+                    <a href = "#">Mua bảo hiểm ô tô</a>
+                    <a href = "#">Trả góp mua xe</a>
+                    <a href = "#">Câu hỏi thường gặp</a>
+                    <a href = "#">Liên hệ</a>
+                </div>
+                <div class = "col">
+                    <h3>Về MTKAR</h3>
+                    <a href = "#">Giới thiệu công ty</a>
+                    <a href = "#">Tin tức</a>
+                    <a href = "#">Chính sách quyền riêng tư</a>
+                    <a href = "#">Điều khoản sử dụng</a>
+                    <a href = "#">Chứng nhận Carmudi</a>
+                </div>
+            </footer>
+            <div style = "margin: 0 auto;width: 25%;">
+                <h3>Đăng ký nhận thông tin sản phẩm mới</h3>
+                <p>Nhận bản tin để không bõ lỡ thông tin sản phẩm mới và khuyến mãi của MTKAR</p>
+                <input class = "DchiEmail" type ="email" placeholder="Nhập địa chỉ Email" id = "email">
+                <input style="margin: 20px 0 10px 70px;" class = "Dkysubmit" type = "button" value ="Đăng ký" onclick = "emailsubmit()">
+                <hr style = "width:100%;border:0pt solid black;margin-top: 10pt;">
+            </div>
+                <p STYLE = "text-align: center;font-size: 10pt;">CÔNG TY TNHH XE MTKar. Hotline: 0123456789 (Minh Tới Khôi) Số ĐKKD: 123456789</P>
+                <P STYLE = "text-align: center;font-size: 10pt;">Địa chỉ: BVU, Trường đại học Bà Rịa Vũng Tàu, Việt Nam. ©2023 by Car MTKar Limited Liability Company.
+                </P>
+            </body>
+            </html>
