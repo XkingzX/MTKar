@@ -1,1 +1,1 @@
-[Hello](https://xkingzx.github.io/MTKar/)
+[Click here to visit the website](https://xkingzx.github.io/MTKar/)
